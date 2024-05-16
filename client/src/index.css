@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #65c1ce;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #53a1ad;
+}
+
+.datepicker input {
+  padding-left: 35px;
+  border-radius: 1rem;
+  height: 3rem;
+  border: none;
+  background: white;
+  color: #111827;
+  font-size: 16px;
+}
+
+.slick-slide {
+  width: 290px !important;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.slick-track {
+  display: flex;
+  gap: 15px;
+}
+.slick-list {
+  padding: 0;
+}
+.slick-arrow {
+  z-index: 10;
+}
+.slick-arrow:before {
+  font-size: 30px;
+}
+.slick-prev {
+  left: 20px;
+}
+.slick-next {
+  right: 30px;
+}
+
+.slider-card {
+  display: flex !important;
+}
+
+.block.flex-1.cursor-pointer.rounded-lg.border-0.text-center.text-sm.font-semibold.leading-9.bg-cyan-700.text-white,
+.w-full.rounded-lg.px-5.py-2.text-center.text-sm.font-medium.bg-cyan-700.text-white {
+  background: #53a1ad;
+}
