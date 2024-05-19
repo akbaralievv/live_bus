@@ -64,3 +64,11 @@
 .w-full.rounded-lg.px-5.py-2.text-center.text-sm.font-medium.bg-cyan-700.text-white {
   background: #53a1ad;
 }
+
+.rccs {
+  width: 400px;
+}
+.rccs__card {
+  width: 400px;
+  height: 220px;
+}

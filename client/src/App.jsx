@@ -4,6 +4,8 @@ import Layout from './layout';
 import Main from './pages/main';
 import RoutesBus from './pages/routesBus';
 import Weather from './pages/weather';
+import DetailTicket from './pages/detailTicket';
+import Payment from './pages/payment';
 
 function App() {
   // useEffect(() => {
@@ -19,6 +21,8 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/routesBus" element={<RoutesBus />} />
           <Route path="/weather" element={<Weather />} />
+          <Route path="/detailTicket" element={<DetailTicket />} />
+          <Route path="/payment" element={<Payment />} />
         </Route>
       </Routes>
     </div>

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import bus from '../../assets/icons/bus.png';
 
 function TicketCard() {
@@ -19,10 +20,12 @@ function TicketCard() {
         </div>
       </div>
       <p className="text-color text-lg">10 часов в пути</p>
-      <button className="flex flex-col items-center justify-center gap-1 h-16 w-full 487:w-52 flex items-center justify-center bg-white rounded-2xl">
+      <NavLink
+        to="/detailTicket"
+        className="flex flex-col items-center justify-center gap-1 h-16 w-full 487:w-52 flex items-center justify-center bg-white rounded-2xl">
         Купить билет
         <span>1000 сом</span>
-      </button>
+      </NavLink>
     </div>
   );
 }
