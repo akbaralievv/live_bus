@@ -1,8 +1,9 @@
 import { useState, useCallback, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 
-export default function PaymentForm() {
+export default function PaymentForm({ onPaymentSuccess }) {
   const [state, setState] = useState({
     cvc: '',
     expiry: '',
@@ -95,7 +96,7 @@ export default function PaymentForm() {
       }
       setState({ ...state, [name]: validatedValue });
     },
-    [state],
+    [state, validateInput],
   );
 
   const handleSubmit = (e) => {
@@ -103,9 +104,8 @@ export default function PaymentForm() {
     const hasErrors = Object.values(errors).some((error) => error !== null);
 
     if (!hasErrors && state.cvc && state.name && state.number && state.expiry) {
-      console.log('Form submitted:', state);
       alert('Оплачено');
-      //API-запрос
+      onPaymentSuccess();
     } else {
       console.log('Errors present. Cannot submit form.');
     }
@@ -218,3 +218,6 @@ export default function PaymentForm() {
     </div>
   );
 }
+PaymentForm.propTypes = {
+  onPaymentSuccess: PropTypes.func.isRequired,
+};

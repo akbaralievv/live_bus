@@ -2,6 +2,7 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import flowbitePlugin from 'flowbite/plugin';
 import flowbiteReactPlugin from 'flowbite-react/tailwind';
+import aspectRatio from '@tailwindcss/aspect-ratio';
 
 export default {
   content: [
@@ -31,8 +32,9 @@ export default {
         osh: "url('/src/assets/images/regions/osh.jpeg')",
         naryn: "url('/src/assets/images/regions/naryn.jpeg')",
         talas: "url('/src/assets/images/regions/talas.jpeg')",
+        almaty: "url('/src/assets/images/regions/almaty.png')",
       },
     },
   },
-  plugins: [flowbitePlugin, flowbiteReactPlugin.plugin()],
+  plugins: [flowbitePlugin, flowbiteReactPlugin.plugin(), aspectRatio],
 };

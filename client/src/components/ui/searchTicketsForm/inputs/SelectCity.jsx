@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 
-const citys = ['Бишкек', 'Ош', 'Джалал-Абад', 'Ыссык-Кол', 'Талас', 'Нарын', 'Баткен'];
+const cities = ['Бишкек', 'Алма-Ата', 'Ош', 'Джалал-Абад', 'Талас'];
 
-function SelectCity({ placeholder }) {
+function SelectCity({ placeholder, onSelect }) {
   const [openOptions, setIsOpenOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
   const optionsRef = useRef(null);
@@ -13,6 +13,7 @@ function SelectCity({ placeholder }) {
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsOpenOptions(false);
+    onSelect(option);
   };
 
   const handleClickOutside = (event) => {
@@ -43,7 +44,7 @@ function SelectCity({ placeholder }) {
       {openOptions && (
         <div className="z-10 absolute rounded-3xl bg-white p-2.5 w-full shadow bottom-[-200px]">
           <ul className="overflow-auto max-h-44">
-            {citys.map((city, index) => (
+            {cities.map((city, index) => (
               <li
                 key={index}
                 onClick={() => handleOptionClick(city)}
@@ -58,8 +59,9 @@ function SelectCity({ placeholder }) {
   );
 }
 
-export default SelectCity;
-
 SelectCity.propTypes = {
   placeholder: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired,
 };
+
+export default SelectCity;
